@@ -1128,11 +1128,13 @@ td.ui-datepicker-week-end a:hover,
     height: 60px;
     *display: inline; }
     #product-page .utility > li {
+      padding: 0 1px;
       display: inline-block;
       border: 0;
       color: transparent;
       font: 0/0 a;
-      text-shadow: none; }
+      text-shadow: none;
+      border: 1px solid #f0f0e5;  }
       #product-page .utility > li.antioxidantshot {
         width: 35px;
         height: 32px;

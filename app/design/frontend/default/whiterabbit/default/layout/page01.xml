@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default translate="label" module="page">
+        <label>All Pages</label>
+        <block type="page/html" name="root" output="toHtml" template="page/1column.phtml">
+            <block type="page/html_head" name="head" as="head" template="page/html/head.phtml">
+                <action method="addCss"><stylesheet>css/style.css</stylesheet></action>
+                <action method="addJs"><script>whiterabbit/vendor/modernizr-2.6.2.min.js</script></action>
+                <action method="addJs"> <script>whiterabbit/vendor/jquery-1.9.1.min.js</script></action>
+                <action method="addJs"> <script>whiterabbit/vendor/jquery.bxslider.min.js</script></action>
+                <action method="addJs"> <script>whiterabbit/vendor/jquery.simplePagination.js</script></action>
+                <action method="addJs"> <script>whiterabbit/vendor/jquery-ui.js</script></action>
+                <action method="addJs"> <script>whiterabbit/vendor/opacity-rollover2.1.js</script></action>
+                <action method="addJs"> <script>whiterabbit/common.js</script></action>
+            </block>
+
+            <block type="page/html_header" name="header" as="header">
+
+                <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
+                    <label>Navigation Bar</label>
+                    <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml" />
+                </block>
+                <block type="page/template_links" name="top.links" as="topLinks" template="page/html/footer.phtml"/>
+                <!--<block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>-->
+                <!--<block type="core/template" name="top.search" as="topSearch"/>-->
+            </block>
+
+            <!--<block type="core/text_list" name="content" as="content">-->
+
+            <!--</block>-->
+
+            <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml"/>
+        </block>
+
+    </default>
+</layout>

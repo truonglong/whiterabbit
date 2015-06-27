@@ -1,0 +1,5 @@
+<?php $_description = $this->getProduct()->getDescription(); ?>
+<?php if ($_description): ?>
+    <h2>Product Description</h2>
+    <div class="product-description"><?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), nl2br($_description), 'description') ?></div>
+<?php endif; ?>

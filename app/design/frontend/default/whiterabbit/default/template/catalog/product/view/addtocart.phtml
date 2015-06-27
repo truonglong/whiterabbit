@@ -1,0 +1,5 @@
+<?php $_product = $this->getProduct() ?>
+
+<?php if($_product->isSaleable()): ?>
+    <button title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart"><?php echo $this->__('Add to Cart') ?></button>
+<?php endif; ?>
