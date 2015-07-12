@@ -1,0 +1,85 @@
+<?php
+//$id = $this->getData("id");
+$_current_category = Mage::registry('current_category');
+$id = $_current_category->getId();
+$_productCollection = Mage::getModel('catalog/category')->load($id)->getProductCollection();
+?>
+
+<div id="content">
+    <div id="main" class="container">
+        <div id="clean-product">
+            <h2>100% ORGANIC JUICES</h2>
+            <p class="para-product">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada metus a volutpat suscipit. Nam aliquam justo venenatis magna blandit pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur ut sapien ex. Donec sodales tempor felis, a tempus orci hendrerit ut.</p>
+            <ul class="list-menu cf">
+                <!--                --><?php //if(!$_productCollection->count()): ?>
+                <!--                    <p class="para-product">--><?php //echo $this->__('There are no products matching the selection.') ?><!--</p>-->
+                <!--                --><?php //else: ?>
+                <?php
+                foreach($_productCollection as $_pro):
+                    $_product = Mage::getModel('catalog/product')->load($_pro->getId());
+                    ?>
+
+                    <li>
+                        <a href="<?php echo $_product->getProductUrl()?>" class="over4">
+                            <img src="<?php echo $_product->getImageUrl();?>" alt="" class="product">
+                            <span class="name"><?php echo $_product->getName()?></span>
+                        </a>
+                        <div class="discrition">
+                            <?php $function_product = $_product->getAttributeText('function_product'); ?>
+                            <ul class="utility cf">
+                                <?php
+                                foreach($function_product as $fd) {
+                                    switch ($fd) {
+                                        case "antioxidantshot":
+                                            echo "<li class='musclepower'>MUSCLE POWER</li>";
+                                            break;
+                                        case "beautyanti-aging":
+                                            echo "<li class='beautyanti-aging'>BEAUTY</li>";
+                                            break;
+                                        case "detoxflush":
+                                            echo "<li class='detoxflush'>DETOXFLUSH</li>";
+                                            break;
+                                        case "enerybooster":
+                                            echo "<li class='enerybooster'>ENERRY BOOSTER</li>";
+                                            break;
+                                        case "hearthealth":
+                                            echo "<li class='hearthealth'>HEARTHEALTH</li>";
+                                            break;
+                                        case "musclepower":
+                                            echo "<li class='musclepower'>MUSCLE POWER</li>";
+                                            break;
+                                        default:
+                                            0;
+                                    }
+                                }
+                                ?>
+                            </ul> <!-- utility -->
+
+                            <p class="constituent"><?php echo $_product->getShortDescription();?></p>
+                            <div class="box-price">
+                                <p>3-DAY $290</p>
+                                <p>5-DAY $450</p>
+                            </div> <!-- box-price -->
+                            <p class="benifit">DETOX &amp; FLUSH</p>
+                        </div> <!-- discrition -->
+                    </li>
+                <?php endforeach; //endif?>
+
+            </ul> <!-- list-menu -->
+        </div> <!-- product-page -->
+        <div class="group-controll cf">
+            <ul class="box-view cf">
+                <li><a href="#">VIEW 10</a> | </li>
+                <li><a href="#">VIEW ALL</a></li>
+            </ul> <!-- box-view -->
+            <div class="box-paging">
+                <div class="inner-paging cf">
+                    <p>Page</p>
+                    <div class="pagination-holder">
+                        <div class="pagination pagi-review"></div>
+                    </div>
+                </div>
+            </div> <!-- box-paging -->
+        </div> <!-- group-control -->
+    </div> <!-- main -->
+</div> <!-- content -->

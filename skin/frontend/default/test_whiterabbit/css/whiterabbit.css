@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: #333;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14px;
+    list-style: none;
+    line-height: 1.3em;
+}
+
+a {
+    color : #7db000;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0 12px 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.border {
+    border: 1px solid #666;
+}
+
+/* Base Elements */
+
+#wrapper {
+    width: 920px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+#header {
+    margin: 0 0 20px 0;
+    overflow: auto;
+}
+
+#content {
+    margin: 20px 0;
+    overflow: auto;
+}
+
+#footer {
+    padding: 10px;
+    border: 1px solid #E1E1E1;
+    background: #F3F3F3;
+    text-align: center;
+}
+
+/* Header content */
+
+#logo {
+    float: left;
+}
+
+#hud {
+    float: right;
+    width: 320px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #E1E1E1;
+    background: #F3F3F3;
+}
+
+#hud li a {
+    float: left;
+    font-size: 12px;
+    margin: 0 10px 0 0;
+}
+
+#utilities {
+    clear: both;
+    margin: 20px 0;
+    overflow: auto;
+    padding: 7px 10px;
+    border: 1px solid #E1E1E1;
+    background: #F3F3F3;
+}
+
+#breadcrumbs {
+    float: left;
+}
+
+#header-search {
+    float: right;
+}
+
+/* Product page */
+
+#main-product-image {
+    margin: 0 20px 10px 0;
+    padding: 10px;
+    float: left;
+    border: 1px solid #E1E1E1;
+    background: #F3F3F3;
+}
+
+#product-details {
+    width: 180px;
+    padding: 10px;
+    float: right;
+    border: 1px solid #E1E1E1;
+    background: #F3F3F3;
+    margin: 0 0 0 20px;
+}
+
+#product-availability span.available, #product-price span {
+    color: #7db000;
+    float: right;
+}
+
+.button {
+    margin: 10px auto;
+    display: block;
+    width: 140px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    background: #ddd;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    text-shadow: #fff 0px 1px 1px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+    background: -moz-linear-gradient(top,  #eeeeee,  #cccccc);
+
+}
+
+.button:hover {
+    background: #014464;
+    background: -webkit-gradient(linear, left top, left bottom, from(#cccccc), to(#999999));
+    background: -moz-linear-gradient(top,  #cccccc,  #999999);
+    color: #000;
+}
+
+.button:active {
+    -moz-box-shadow: 0 2px 6px black;
+    -webkit-box-shadow: 0 2px 6px black;
+}

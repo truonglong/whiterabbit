@@ -21,16 +21,36 @@
             <div class="info-social">
                 <div class="cf">
                     <ul class="social cf">
-                        <li class="facebook"><a href="#">Facebook</a></li>
-                        <li class="instagram"><a href="#">Instagram</a></li>
+                        <li class="facebook"><a href="https://www.facebook.com/wearejuicejunkie">Facebook</a></li>
+                        <li class="instagram"><a href="https://instagram.com/juicejunkiesg">Instagram</a></li>
                     </ul> <!-- social -->
                     <div class="form-search">
-                        <form action="">
+                        <form action="<?php echo $this->getUrl()?>/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
                             <div class="box-search cf">
                                 <input type="text" name="subscrible" value="Subscrible now" class="ipt-text">
                                 <input type="submit" value="Go" class="ipt-submit">
                             </div> <!-- box-search -->
                         </form>
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                            if (jQuery.browser.webkit) {
+                                jQuery('input.ipt-submit').css('line-height', '20px');
+                            }
+                            jQuery('#newsletter').focus(function() {
+                                if(jQuery(this).val()=='SUBSCRIBE NOW') {
+                                    jQuery(this).val('');
+                                }
+                            });
+
+                            jQuery('#newsletter').blur(function() {
+                                if(jQuery(this).val()=='') {
+                                    jQuery(this).val('SUBSCRIBE NOW');
+                                }
+                            });
+
+                            //]]>
+                        </script>
                     </div> <!-- form-search -->
                 </div>
             </div> <!-- info-social -->

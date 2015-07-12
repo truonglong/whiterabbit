@@ -1,15 +1,14 @@
-$(document).ready(function() {
+(function($) {
 
 	$(window).load(function() {
 		var images = new Array ('images/index/logo_01.png',
 														'images/index/logo_02.png',
 														'images/index/logo_03.png');
         var link = '<?php echo $this->getSkinUrl("")?>';
-    var imgNum = Math.floor(Math.random() * images.length);
-    $("#logo a img").attr('src', + link + images[imgNum]);
+        var imgNum = Math.floor(Math.random() * images.length);
+        $("#logo a img").attr('src', + link + images[imgNum]);
         console.log('src' + link + images[imgNum]);
-        alert('fghfghghjgjguuyiuyiyiuyi');
-	});
+    });
 
 	// Create event sub-navi for Page
 	$('.nav-sub').hide();
@@ -91,20 +90,20 @@ $(document).ready(function() {
 
 	getDatePicker(".datepicker");
 
-}); // end document jquery
+})(jQuery); // end document jquery
 
 function getDatePicker(item) {
-  if(item.length > 0) {
-    $(item).datepicker({
-      showOn: 'both',
-      dayNames: ['日', '月', '火', '水', '木', '金', '土'],
-      dateFormat: 'yy/mm/dd',
-      buttonImage: 'img/cart/ic_calendar.png',
-      buttonImageOnly: true,
-      changeMonth: true,
-      changeYear: true,
-      showMonthAfterYear: true
-    });
-  }
+    var link = '<?php echo $this->getSkinUrl("")?>';
+    if(item.length > 0) {
+        $(item).datepicker({
+            showOn: 'both',
+            dateFormat: 'yy/mm/dd',
+            buttonImage: link + 'images/cart/ic_calendar.png',
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true
+        });
+    }
 }
 

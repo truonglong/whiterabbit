@@ -92,17 +92,17 @@ $(document).ready(function() {
 }); // end document jquery
 
 function getDatePicker(item) {
-  if(item.length > 0) {
-    $(item).datepicker({
-      showOn: 'both',
-      dayNames: ['日', '月', '火', '水', '木', '金', '土'],
-      dateFormat: 'yy/mm/dd',
-      buttonImage: 'img/cart/ic_calendar.png',
-      buttonImageOnly: true,
-      changeMonth: true,
-      changeYear: true,
-      showMonthAfterYear: true
-    });
-  }
+    var img_link = $(".col03 img").attr('src');
+    if(item.length > 0) {
+        $(item).datepicker({
+            showOn: 'both',
+            dateFormat: 'yy/mm/dd',
+            buttonImage: img_link,
+            buttonImageOnly: true,
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true
+        });
+    }
 }
 

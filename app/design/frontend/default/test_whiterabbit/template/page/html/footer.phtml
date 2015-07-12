@@ -1,0 +1,59 @@
+<!--<div id="footer" class="border">-->
+<!--    --><?php //echo $this->__('Help Us to Keep Magento Healthy')?>
+<!--    - <a href="http://www.magentocommerce.com/bug-tracking" onclick="this.target='_blank'">-->
+<!--        <strong>--><?php //echo $this->__('Truong Long') ?><!--</strong>-->
+<!--    </a>-->
+<!--    --><?php //echo $this->__('(ver. %s)', Mage::getVersion()) ?>
+<!--    --><?php //echo $this->getCopyright() ?><!--</address>-->
+<!--</div>-->
+
+<div id="footer">
+    <div class="container">
+        <div class="inner-footer cf">
+            <div class="info-brand">
+                <ul class="nav-footer cf">
+                    <li class="item01"><a href="<?php $this->getUrl()?>/abouts.html">About</a></li>
+                    <li class="item02"><a href="#">FAQ</a></li>
+                    <li class="item03"><a href="#">Contact</a></li>
+                </ul> <!-- nav-footer -->
+                <p class="copyright">©2015 JUICE JUNKIE PTE LTD. ALL RIGHTS RESERVED.</p>
+            </div> <!-- info-brand -->
+            <div class="info-social">
+                <div class="cf">
+                    <ul class="social cf">
+                        <li class="facebook"><a href="https://www.facebook.com/wearejuicejunkie">Facebook</a></li>
+                        <li class="instagram"><a href="https://instagram.com/juicejunkiesg">Instagram</a></li>
+                    </ul> <!-- social -->
+                    <div class="form-search">
+                        <form action="<?php echo $this->getUrl()?>/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+                            <div class="box-search cf">
+                                <input type="text" name="subscrible" value="Subscrible now" class="ipt-text">
+                                <input type="submit" value="Go" class="ipt-submit">
+                            </div> <!-- box-search -->
+                        </form>
+                        <script type="text/javascript">
+                            //<![CDATA[
+                            var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                            if (jQuery.browser) {
+                                jQuery('input.ipt-submit').css('line-height', '20px');
+                            }
+                            jQuery('#newsletter').focus(function() {
+                                if(jQuery(this).val()=='SUBSCRIBE NOW') {
+                                    jQuery(this).val('');
+                                }
+                            });
+
+                            jQuery('#newsletter').blur(function() {
+                                if(jQuery(this).val()=='') {
+                                    jQuery(this).val('SUBSCRIBE NOW');
+                                }
+                            });
+
+                            //]]>
+                        </script>
+                    </div> <!-- form-search -->
+                </div>
+            </div> <!-- info-social -->
+        </div> <!-- inner-footer -->
+    </div> <!-- container -->
+</div> <!-- footer -->

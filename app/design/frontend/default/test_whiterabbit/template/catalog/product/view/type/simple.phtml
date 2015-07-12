@@ -1,0 +1,9 @@
+<?php $_product = $this->getProduct() ?>
+<div id="product-availability">Availability
+    <?php if($_product->isSaleable()): ?>
+        <span class="available"><?php echo $this->__('In stock') ?></span>
+    <?php else: ?>
+        <span class="unavailable"><?php echo $this->__('Out of stock') ?></span>
+    <?php endif; ?>
+</div>
+<div id="product-price">Price <span><?php echo $this->getPriceHtml($_product) ?></span></div>

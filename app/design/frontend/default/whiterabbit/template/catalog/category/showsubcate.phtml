@@ -1,0 +1,29 @@
+
+<?php
+    $id = $this->getData("id");
+    $category = Mage::getModel('catalog/category');
+    $subcate = explode(',',$category->load($id)->getChildren());
+    sort($subcate);
+?>
+<div id="content">
+    <div id="main" class="container">
+        <div id="order-pick">
+            <h2>PICK A DOSE</h2>
+            <p class="para-order">All juices are freshly pressed the same day they are delivered to you. All deliveries will arrive between 6.00pm – 8.00pm Monday to Saturday. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada metus a volutpat suscipit. Nam aliquam justo venenatis magna blandit pellentesque. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur ut sapien ex. Donec sodales tempor felis,</p>
+            <ul class="list-order cf">
+                <?php foreach($subcate as $val) {?>
+                    <li>
+                        <a href="<?php echo $category->load($val)->getUrl_path();?>" class="over4">
+                            <img src="<?php echo $category->load($val)->getImageUrl();?>" alt="" class="product">
+                            <span class="name"><?php echo $category->load($val)->getName();?></span>
+                        </a>
+                        <div class="discrition">
+                            <p class="intro"><?php echo $category->load($val)->getDescription();?></p>
+                            <p class="price"><?php echo $category->load($val)->getMetaDescription();?></p>
+                        </div> <!-- discrition -->
+                    </li>
+                <?php }?>
+            </ul> <!-- list-order -->
+        </div> <!-- order-pick -->
+    </div> <!-- main -->
+</div> <!-- content -->

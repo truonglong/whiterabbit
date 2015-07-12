@@ -1,0 +1,88 @@
+<?php
+    $_current_category = Mage::registry('current_category');
+    $_id = $_current_category->getId();
+    $_productCollection = Mage::getModel('catalog/category')->load($_id)->getProductCollection();
+?>
+
+<div id="content">
+    <div id="main" class="container">
+        <div id="choose-juice">
+            <div class="choose-top">
+                <h2>CHOOSE YOUR JUICES</h2>
+                <div class="banner"><p class="bnr-product chosen_0"></p></div>
+            </div> <!-- choose-top -->
+
+            <ul class="list-menu cf">
+                <?php foreach($_productCollection as $_pro):$_product = Mage::getModel('catalog/product')->load($_pro->getId());?>
+                <li>
+                    <a href="<?php echo $_product->getProductUrl()?>" class="over4">
+                        <img src="<?php echo $_product->getImageUrl();?>" alt="" class="product">
+                        <span class="name"><?php echo $_product->getName()?></span>
+                    </a>
+                    <div class="discrition">
+                        <?php $function_product = $_product->getAttributeText('function_product'); ?>
+                        <ul class="utility cf">
+                            <?php
+                            foreach($function_product as $fd) {
+                                switch ($fd) {
+                                    case "antioxidantshot":
+                                        echo "<li class='musclepower'>MUSCLE POWER</li>";
+                                        break;
+                                    case "beautyanti-aging":
+                                        echo "<li class='beautyanti-aging'>BEAUTY</li>";
+                                        break;
+                                    case "detoxflush":
+                                        echo "<li class='detoxflush'>DETOXFLUSH</li>";
+                                        break;
+                                    case "enerybooster":
+                                        echo "<li class='enerybooster'>ENERRY BOOSTER</li>";
+                                        break;
+                                    case "hearthealth":
+                                        echo "<li class='hearthealth'>HEARTHEALTH</li>";
+                                        break;
+                                    case "musclepower":
+                                        echo "<li class='musclepower'>MUSCLE POWER</li>";
+                                        break;
+                                    default:
+                                        0;
+                                }
+                            }
+                            ?>
+                        </ul> <!-- utility -->
+                        <p class="constituent"><?php echo $_product->getShortDescription();?></p>
+                        <div class="quantity cf">
+                            <input type="text" name="quantity" value="0">
+                            <p class="box-count">
+                                <a href="#" class="ar-count ar-up">Up</a>
+                                <a href="#" class="ar-count ar-down">Down</a>
+                            </p> <!-- box-count -->
+                        </div> <!-- quanlity -->
+                        <p class="benifit">DETOX &amp; FLUSH</p>
+                    </div> <!-- discrition -->
+                </li>
+                <?php endforeach;?>
+            </ul><!-- list-menu -->
+
+            <div class="box-link">
+                <a href="#" class="btn-order over4">Order</a>
+            </div>
+        </div><!-- choose-juice -->
+
+
+
+<!--        <div class="group-controll cf">-->
+<!--            <ul class="box-view cf">-->
+<!--                <li><a href="#">VIEW 10</a> | </li>-->
+<!--                <li><a href="#">VIEW ALL</a></li>-->
+<!--            </ul> <!-- box-view -->
+<!--            <div class="box-paging">-->
+<!--                <div class="inner-paging cf">-->
+<!--                    <p>Page</p>-->
+<!--                    <div class="pagination-holder">-->
+<!--                        <div class="pagination pagi-review"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div> <!-- box-paging -->
+<!--        </div> <!-- group-control -->
+    </div>
+</div>

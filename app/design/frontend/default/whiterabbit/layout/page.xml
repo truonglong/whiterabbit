@@ -4,14 +4,30 @@
         <label>All Pages</label>
         <block type="page/html" name="root" output="toHtml" template="page/1column.phtml">
             <block type="page/html_head" name="head" as="head" template="page/html/head.phtml">
-                <action method="addCss"><stylesheet>css/style.css</stylesheet></action>
-                <action method="addJs"><script>whiterabbit/vendor/modernizr-2.6.2.min.js</script></action>
+
+                <action method="addJs"><script>prototype/prototype.js</script></action>
+                <action method="addJs"><script>lib/ccard.js</script></action>
+                <action method="addJs"><script>prototype/validation.js</script></action>
+                <action method="addJs"><script>scriptaculous/builder.js</script></action>
+                <action method="addJs"><script>scriptaculous/effects.js</script></action>
+                <action method="addJs"><script>scriptaculous/dragdrop.js</script></action>
+                <action method="addJs"><script>scriptaculous/controls.js</script></action>
+                <action method="addJs"><script>scriptaculous/slider.js</script></action>
+                <action method="addJs"><script>varien/js.js</script></action>
+                <action method="addJs"><script>varien/form.js</script></action>
+                <action method="addJs"><script>varien/menu.js</script></action>
+                <action method="addJs"><script>mage/translate.js</script></action>
+                <action method="addJs"><script>mage/cookies.js</script></action>
+
+                <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
                 <action method="addJs"> <script>whiterabbit/vendor/jquery-1.9.1.min.js</script></action>
                 <action method="addJs"> <script>whiterabbit/vendor/jquery.bxslider.min.js</script></action>
                 <action method="addJs"> <script>whiterabbit/vendor/jquery.simplePagination.js</script></action>
                 <action method="addJs"> <script>whiterabbit/vendor/jquery-ui.js</script></action>
                 <action method="addJs"> <script>whiterabbit/vendor/opacity-rollover2.1.js</script></action>
                 <action method="addJs"> <script>whiterabbit/common.js</script></action>
+
+                <action method="addCss"><stylesheet>css/stylesheet.css</stylesheet></action>
             </block>
 
             <block type="page/html_header" name="header" as="header">
@@ -20,9 +36,6 @@
                     <label>Navigation Bar</label>
                     <block type="page/html_topmenu" name="catalog.topnav" template="page/html/topmenu.phtml" />
                 </block>
-                <!--<block type="page/template_links" name="top.links" as="topLinks" template="page/html/footer.phtml"/>-->
-                <!--<block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>-->
-                <!--<block type="core/template" name="top.search" as="topSearch"/>-->
             </block>
 
             <block type="core/text_list" name="content" as="content">
@@ -33,4 +46,48 @@
         </block>
 
     </default>
+    <page_empty translate="label">
+        <label>All Empty Layout Pages</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/empty.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_empty>
+
+    <page_one_column translate="label">
+        <label>All One-Column Layout Pages</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_one_column>
+
+    <page_two_columns_left translate="label">
+        <label>All Two-Column Layout Pages (Left Column)</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_two_columns_left>
+
+    <page_two_columns_right translate="label">
+        <label>All Two-Column Layout Pages (Right Column)</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_two_columns_right>
+
+    <page_three_columns translate="label">
+        <label>All Three-Column Layout Pages</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/3columns.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_three_columns>
 </layout>
